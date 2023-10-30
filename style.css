@@ -3,18 +3,92 @@ body {
     margin: 0px;
     background-color: #eceff1;
     color: black;
+    height: 100vh;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     padding: 30px;
-    box-shadow: 0 6px 2px -2px rgba(0, 0, 0, 0.2);;
+    box-shadow: 0 6px 6px -2px rgba(0, 0, 0, 0.2);;
 }
 
 .dark-mode {
     background-color: #263238;
     color: white;
+    border-color: white;
     font-size: 15px;
+    font-weight: 600;
+    padding: 15px;
     border-radius: 30px;
+    cursor: pointer;
+  }
+
+  .add-button-ctnr {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .user-input {
+    display: flex;
+    justify-content: center;
+  }
+
+  input {
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: white;
+  font-size: 18px;
+  padding: 9px 20px;
+  width: 100%;
+  }
+
+  .form-submit {
+    background-color: #263238;
+    border-radius: 12px;
+    border-color: white;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    height: 50px;
+    margin-top: 38px;
+    outline: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .checkbox {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    height: 40px;
+  }
+
+  form {
+    border-style: groove;
+    border-color: white;
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    padding: 20px;
+    height: 500px;
+    width: 400px;
+  }
+
+  .new-book:hover {
+    background-color: rgb(211, 200, 79);
+    border-radius: 15px;
+    cursor: pointer;
+  }
+
+  .new-book {
+    font-size: 25px;
+    font-weight: 900;
+    padding: 15px;
+    border-width: 1px;
+    border-radius: 15px;
   }
