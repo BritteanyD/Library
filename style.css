@@ -62,19 +62,10 @@ img {
   }
 
   form {
-    box-sizing: border-box;
-    margin-top: 20px;
+    text-align: center;
+    margin-top: 80px;
     padding: 20px;
-    width: 500px;
-  }
-
-  h2 {
-    margin-left: 70px;
-  
-  }
-
-  h3 {
-    margin-left: 77px
+    width: 400px;
   }
 
   .new-book:hover {
@@ -92,6 +83,7 @@ img {
   }
 
   .side-bar {
+    display: none;
     width: 20rem;
     height: 100%;
     padding: 2rem 2rem;
