@@ -1,9 +1,3 @@
-// Dark mode and Light mode
-
-function myFunction() {
-    var element = document.body;
-    element.classList.toggle("dark-mode");
- }
 //Take user's input and store the new book objects into an array
 
  const myLibrary = [];
@@ -17,7 +11,9 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary() {
-  // do stuff here
+  let submit = document.getElementsByClassName("form-submit");
+  submit.submit();
+
 }
 
 //Click button to bring up user input as a form
