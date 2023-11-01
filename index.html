@@ -20,17 +20,17 @@
         <div class="user-input">
             <form>
                 <h2>Add Your Book</h2>
-                <input type="text" name="title" placeholder="Book Title" />
+                <input type="text" name="title" class="title" placeholder="Book Title" />
                 <p>
-                    <input type="text" name="author" placeholder="Author" />
+                    <input type="text" name="author" class="author" placeholder="Author" />
                 </p>
                 <p>
-                    <input type="number" name="pages" min="1" placeholder="pages" />
+                    <input type="number" name="pages" class="pages" min="1" placeholder="pages" />
                 </p>
                 <div class="checkbox">
                     <p>
                     <h3>Did you read this?</h3>
-                    <input type="checkbox" name="read" value="read" />
+                    <input type="checkbox" name="read" id="checked" style="height: 20px;"/>
                     </p>
                 </div>
                 <button class="form-submit">Submit</button>
