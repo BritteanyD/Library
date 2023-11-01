@@ -1,6 +1,19 @@
 //Take user's input and store the new book objects into an array
 
-//const myLibrary = [];
+const myLibrary = [
+  {
+    title: "The Hobbit",
+    author: "J.R.R. Tolkien",
+    pages: "295",
+    read: true
+  },
+  {
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    pages: "281",
+    read: false
+  }
+];
 
 function Book(title, author, pages, read) {
   // the constructor...
@@ -21,12 +34,12 @@ function addBookToLibrary() {
 }
 
 let newBook = document.querySelector(".new-book");
-newBook.addEventListener("click", function() {
-document.querySelector(".side-bar").style.display = "block";
+newBook.addEventListener("click", function () {
+  document.querySelector(".side-bar").style.display = "block";
 });
 
 let formSubmit = document.querySelector(".form-submit");
-formSubmit.addEventListener("click", function(event) {
+formSubmit.addEventListener("click", function (event) {
   event.preventDefault();
   console.log(addBookToLibrary())
   document.querySelector(".side-bar").style.display = "none";
