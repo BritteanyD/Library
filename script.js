@@ -54,13 +54,18 @@ formSubmit.addEventListener("click", function (event) {
 function displayBook(bookInfo) {
   let bookList = document.querySelector("#book-list");
   let bookDiv = document.createElement("div");
+  bookDiv.classList.add("book-style");
   let titleP = document.createElement("p");
+  titleP.classList.add("book-title");
   titleP.textContent = `Title: ${bookInfo.title}`;
   let authorP = document.createElement("p");
+  authorP.classList.add("book-author");
   authorP.textContent = `Author: ${bookInfo.author}`;
   let pagesP = document.createElement("p");
+  pagesP.classList.add("book-pages");
   pagesP.textContent = `Pages: ${bookInfo.pages}`;
   let readP = document.createElement("p");
+  readP.classList.add("book-read");
   readP.textContent = `Read: ${bookInfo.read ? "Yes" : "No"}`;
 
   bookDiv.appendChild(titleP);
@@ -71,6 +76,34 @@ function displayBook(bookInfo) {
   bookList.appendChild(bookDiv);
 }
 
+function defaultBooks() {
+  let bookList = document.querySelector("#book-list");
+
+  myLibrary.forEach((bookInfo) => {
+  let bookDiv = document.createElement("div");
+  bookDiv.classList.add("book-style");
+  let titleP = document.createElement("p");
+  titleP.classList.add("book-title");
+  titleP.textContent = `Title: ${bookInfo.title}`;
+  let authorP = document.createElement("p");
+  authorP.classList.add("book-author");
+  authorP.textContent = `Author: ${bookInfo.author}`;
+  let pagesP = document.createElement("p");
+  pagesP.classList.add("book-pages");
+  pagesP.textContent = `Pages: ${bookInfo.pages}`;
+  let readP = document.createElement("p");
+  readP.classList.add("book-read");
+  readP.textContent = `Read: ${bookInfo.read ? "Yes" : "No"}`;
+
+  bookDiv.appendChild(titleP);
+  bookDiv.appendChild(authorP);
+  bookDiv.appendChild(pagesP);
+  bookDiv.appendChild(readP);
+
+  bookList.appendChild(bookDiv);
+});
+}
+window.addEventListener("load", defaultBooks);
 
 
 

@@ -23,6 +23,7 @@ img {
     display: flex;
     justify-content: center;
     margin-top: 30px;
+    margin-bottom: 30px;
   }
 
   .user-input {
@@ -92,3 +93,26 @@ img {
     color: white;
   }
 
+  .book-style {
+  background-color:#263238;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  border: rgba(0, 0, 0, 0.2);
+  border-width: 10px;
+  border-style:outset;
+  width: 250px;
+  height: 280px;
+  padding: 10px;
+  }
+
+
+  #book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-left: 125px;
+    margin-right: 60px;
+  }
+  
