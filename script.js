@@ -1,17 +1,4 @@
-const myLibrary = [
-  {
-    title: "The Hobbit",
-    author: "J.R.R. Tolkien",
-    pages: "295",
-    read: true
-  },
-  {
-    title: "To Kill a Mockingbird",
-    author: "Harper Lee",
-    pages: "281",
-    read: false
-  }
-];
+const myLibrary = []
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -19,6 +6,13 @@ function Book(title, author, pages, read) {
   this.pages = pages;
   this.read = read;
 }
+
+function toggleBookReadStatus(bookInfo) {
+  //to do toggle book read status
+  bookInfo.read = !bookInfo.read;
+}
+
+
 
 function addBookToLibrary() {
   let title = document.querySelector(".title").value;
@@ -64,46 +58,23 @@ function displayBook(bookInfo) {
   let pagesP = document.createElement("p");
   pagesP.classList.add("book-pages");
   pagesP.textContent = `Pages: ${bookInfo.pages}`;
-  let readP = document.createElement("p");
-  readP.classList.add("book-read");
-  readP.textContent = `Read: ${bookInfo.read ? "Yes" : "No"}`;
+  let readToggle = document.createElement("button");
+  readToggle.textContent = `Read: ${bookInfo.read ? "Yes" : "No"}`;
+  readToggle.addEventListener("click", () => {
+    toggleBookReadStatus(bookInfo);
+    readToggle.textContent = `Read: ${bookInfo.read ? "Yes" : "No"}`;
+  });
+
+  let deleteBook = document.createElement("button");
+  deleteBook.textContent = `Delete Book`;
+  deleteBook.addEventListener("click", () => {
+  });
 
   bookDiv.appendChild(titleP);
   bookDiv.appendChild(authorP);
   bookDiv.appendChild(pagesP);
-  bookDiv.appendChild(readP);
+  bookDiv.appendChild(readToggle);
+  bookDiv.appendChild(deleteBook);
 
   bookList.appendChild(bookDiv);
 }
-
-function defaultBooks() {
-  let bookList = document.querySelector("#book-list");
-
-  myLibrary.forEach((bookInfo) => {
-  let bookDiv = document.createElement("div");
-  bookDiv.classList.add("book-style");
-  let titleP = document.createElement("p");
-  titleP.classList.add("book-title");
-  titleP.textContent = `Title: ${bookInfo.title}`;
-  let authorP = document.createElement("p");
-  authorP.classList.add("book-author");
-  authorP.textContent = `Author: ${bookInfo.author}`;
-  let pagesP = document.createElement("p");
-  pagesP.classList.add("book-pages");
-  pagesP.textContent = `Pages: ${bookInfo.pages}`;
-  let readP = document.createElement("p");
-  readP.classList.add("book-read");
-  readP.textContent = `Read: ${bookInfo.read ? "Yes" : "No"}`;
-
-  bookDiv.appendChild(titleP);
-  bookDiv.appendChild(authorP);
-  bookDiv.appendChild(pagesP);
-  bookDiv.appendChild(readP);
-
-  bookList.appendChild(bookDiv);
-});
-}
-window.addEventListener("load", defaultBooks);
-
-
-
