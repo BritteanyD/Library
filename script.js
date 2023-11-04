@@ -7,9 +7,8 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-function toggleBookReadStatus(bookInfo) {
-  //to do toggle book read status
-  bookInfo.read = !bookInfo.read;
+Book.prototype.toggleRead = function () {
+  this.read = !this.read;
 }
 
 function removeBook(bookInfo) {
@@ -67,7 +66,7 @@ function displayBook(bookInfo) {
   readToggle.classList.add("read-toggle");
   readToggle.textContent = `Read: ${bookInfo.read ? "Yes" : "No"}`;
   readToggle.addEventListener("click", () => {
-    toggleBookReadStatus(bookInfo);
+    bookInfo.toggleRead();
     readToggle.textContent = `Read: ${bookInfo.read ? "Yes" : "No"}`;
   });
 
