@@ -12,7 +12,12 @@ function toggleBookReadStatus(bookInfo) {
   bookInfo.read = !bookInfo.read;
 }
 
-
+function removeBook(bookInfo) {
+  const index = myLibrary.indexOf(bookInfo);
+  if (index !== -1) {
+    myLibrary.splice(index, 1);
+  }
+}
 
 function addBookToLibrary() {
   let title = document.querySelector(".title").value;
@@ -59,6 +64,7 @@ function displayBook(bookInfo) {
   pagesP.classList.add("book-pages");
   pagesP.textContent = `Pages: ${bookInfo.pages}`;
   let readToggle = document.createElement("button");
+  readToggle.classList.add("read-toggle");
   readToggle.textContent = `Read: ${bookInfo.read ? "Yes" : "No"}`;
   readToggle.addEventListener("click", () => {
     toggleBookReadStatus(bookInfo);
@@ -66,8 +72,11 @@ function displayBook(bookInfo) {
   });
 
   let deleteBook = document.createElement("button");
+  deleteBook.classList.add("delete-book");
   deleteBook.textContent = `Delete Book`;
   deleteBook.addEventListener("click", () => {
+    removeBook(bookInfo);
+    bookList.removeChild(bookDiv);
   });
 
   bookDiv.appendChild(titleP);
